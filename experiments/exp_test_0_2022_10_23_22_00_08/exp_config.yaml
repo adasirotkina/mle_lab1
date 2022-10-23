@@ -1,0 +1,9 @@
+model: RAND_FOREST
+model params:
+  n_estimators: '100'
+  criterion: squared_error
+  path: C:\Users\ada\Maga\MLE\lab1\experiments\rand_forest.sav
+tests: func
+score: nan
+X_test path: C:\Users\ada\Maga\MLE\lab1\data\Test_bike_X.csv
+y_test path: C:\Users\ada\Maga\MLE\lab1\data\Test_bike_y.csv

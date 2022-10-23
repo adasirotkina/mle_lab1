@@ -20,7 +20,13 @@ class MultiModel():
         logger = Logger(SHOW_LOG)
         self.config = configparser.ConfigParser()
         self.log = logger.get_logger(__name__)
-        self.config.read("config.ini")
+        # self.config.read(os.path.join(os.getcwd(), "config.ini"))
+        self.config.read("C:/Users/ada/Maga/MLE/lab1/src/config.ini")
+        # path = '/'.join((os.path.abspath("config.ini").replace('\\', '/')).split('/')[:-1])
+        #
+        # self.config.read(os.path.join(path, 'config.ini'))
+        # print(self.config)
+        # print(os.path.join(os.getcwd(), "config.ini"))
         self.X_train = pd.read_csv(
             self.config["SPLIT_DATA"]["X_train"], index_col=0)
         self.y_train = pd.read_csv(
@@ -32,7 +38,7 @@ class MultiModel():
         sc = StandardScaler()
         self.X_train = sc.fit_transform(self.X_train)
         self.X_test = sc.transform(self.X_test)
-        self.project_path = os.path.join(os.path.dirname(os.getcwd()), "experiments")
+        self.project_path = os.path.join(os.getcwd(), "experiments")
         self.lasso = os.path.join(self.project_path, "lasso.sav")
         self.rand_forest_path = os.path.join(
             self.project_path, "rand_forest.sav")
@@ -74,8 +80,8 @@ class MultiModel():
 
     def save_model(self, reg, path: str, name: str, params: dict) -> bool:
         self.config[name] = params
-        os.remove('config.ini')
-        with open('config.ini', 'w') as configfile:
+        os.remove('C:/Users/ada/Maga/MLE/lab1/src/config.ini')
+        with open('C:/Users/ada/Maga/MLE/lab1/src/config.ini', 'w') as configfile:
             self.config.write(configfile)
         pickle.dump(reg, open(path, 'wb'))
         self.log.info(f'{path} is saved')

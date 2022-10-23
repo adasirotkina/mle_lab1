@@ -1,0 +1,7 @@
+model: LASSO
+model params:
+  path: C:\Users\ada\Maga\MLE\lab1\experiments\lasso.sav
+tests: func
+score: '0.0011586939935723795'
+X_test path: C:\Users\ada\Maga\MLE\lab1\data\Test_bike_X.csv
+y_test path: C:\Users\ada\Maga\MLE\lab1\data\Test_bike_y.csv
