@@ -1,7 +1,2 @@
-2022-10-23 15:31:29,067 — __main__ — INFO — DataMaker is ready
-2022-10-23 15:31:29,306 — __main__ — INFO — X and y data is ready
-2022-10-23 15:31:29,445 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\data\Train_bike_X.csv is saved
-2022-10-23 15:31:29,480 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\data\Train_bike_y.csv is saved
-2022-10-23 15:31:29,516 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\data\Test_bike_X.csv is saved
-2022-10-23 15:31:29,528 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\data\Test_bike_y.csv is saved
-2022-10-23 15:31:29,529 — __main__ — INFO — Train and test data is ready
+2022-10-23 17:20:19,830 — __main__ — INFO — Predictor is ready
+2022-10-23 17:20:19,991 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\rand_forest.sav is up to date
