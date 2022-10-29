@@ -44,7 +44,7 @@ class MultiModel():
             self.project_path, "rand_forest.sav")
         self.log.info("MultiModel is ready")
 
-    def log_reg(self, predict=False) -> bool:
+    def lasso_reg(self, predict=False) -> bool:
         reg = Lasso()
         try:
             reg.fit(self.X_train, self.y_train)
@@ -90,5 +90,5 @@ class MultiModel():
 
 if __name__ == "__main__":
     multi_model = MultiModel()
-    multi_model.log_reg(predict=True)
+    multi_model.lasso_reg(predict=True)
     multi_model.rand_forest(predict=True)

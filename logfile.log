@@ -1,2 +1,4 @@
-2022-10-23 22:13:39,804 — __main__ — INFO — Predictor is ready
-2022-10-23 22:13:40,116 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\rand_forest.sav passed smoke tests
+2022-10-26 16:00:19,855 — train — INFO — MultiModel is ready
+2022-10-26 16:00:22,644 — train — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\rand_forest.sav is saved
+0-26 16:00:19,855 — train — INFO — MultiModel is ready
+2022-10-26 16:00:22,644 — train — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\rand_forest.sav is saved
