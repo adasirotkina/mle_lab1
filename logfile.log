@@ -1,4 +1,10 @@
-2022-10-26 16:00:19,855 — train — INFO — MultiModel is ready
-2022-10-26 16:00:22,644 — train — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\rand_forest.sav is saved
-0-26 16:00:19,855 — train — INFO — MultiModel is ready
-2022-10-26 16:00:22,644 — train — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\rand_forest.sav is saved
+2022-11-06 12:12:18,927 — preprocess — INFO — DataMaker is ready
+2022-11-06 12:12:19,016 — preprocess — INFO — C:\Users\ada\Maga\MLE\lab1\data\Train_bike_X.csv is saved
+2022-11-06 12:12:19,031 — preprocess — INFO — C:\Users\ada\Maga\MLE\lab1\data\Train_bike_y.csv is saved
+2022-11-06 12:12:19,048 — preprocess — INFO — C:\Users\ada\Maga\MLE\lab1\data\Test_bike_X.csv is saved
+2022-11-06 12:12:19,054 — preprocess — INFO — C:\Users\ada\Maga\MLE\lab1\data\Test_bike_y.csv is saved
+2022-11-06 12:12:19,055 — preprocess — INFO — Train and test data is ready
+2:19,054 — preprocess — INFO — C:\Users\ada\Maga\MLE\lab1\data\Test_bike_y.csv is saved
+2022-11-06 12:12:19,055 — preprocess — INFO — Train and test data is ready
+ C:\Users\ada\Maga\MLE\lab1\data\Test_bike_y.csv is saved
+2022-11-06 12:12:19,055 — preprocess — INFO — Train and test data is ready
