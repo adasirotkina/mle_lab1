@@ -39,7 +39,7 @@ options {
             steps {
                 script {
                     try {
-                        bat 'chcp 65001 && cd lab1 && docker-compose build'
+                        bat 'chcp 65001 && cd mle-lab1 && docker-compose build'
                         }
 
                     finally {
@@ -63,7 +63,7 @@ options {
                 dir("lab1") {
                         bat '''
                             docker-compose up -d
-                            for /f %%i in ('docker ps -qf "name=^mle-template-web-1"') do set containerId=%%i
+                            for /f %%i in ('docker ps -qf "name=^mle-lab1-web-1"') do set containerId=%%i
                             echo %containerId%
                             IF "%containerId%" == "" (
                                 echo "No container running"
