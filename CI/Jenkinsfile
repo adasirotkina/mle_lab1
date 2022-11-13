@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDS=credentials('mle-template')
+        DOCKERHUB_CREDS=credentials('mle_lab1')
         LC_ALL = "en_US.UTF-8"
         LANG    = "en_US.UTF-8"
         LANGUAGE = "en_US.UTF-8"
@@ -16,13 +16,13 @@ options {
         stage('Clone github repository') {
             steps {
                 cleanWs()
-                bat 'chcp 65001 && git clone -b main https://github.com/IcyAltair/mle-template.git'
+                bat 'chcp 65001 && git clone -b main https://github.com/adasirotkina/mle_lab1'
 				}
 			}
 
         stage('Checkout repo dir') {
             steps {
-                bat 'chcp 65001 && cd mle-template && dir'
+                bat 'chcp 65001 && cd lab1 && dir'
 				}
 			}
 
@@ -39,13 +39,13 @@ options {
             steps {
                 script {
                     try {
-                        bat 'chcp 65001 && cd mle-template && docker-compose build'
+                        bat 'chcp 65001 && cd lab1 && docker-compose build'
                         }
 
                     finally {
                     bat '''
                         chcp 65001
-                        cd mle-template
+                        cd lab1
                         docker-compose up -d
                         '''
                         }
@@ -60,7 +60,7 @@ options {
 
         stage('Checkout container logs') {
             steps {
-                dir("mle-template") {
+                dir("lab1") {
                         bat '''
                             docker-compose up -d
                             for /f %%i in ('docker ps -qf "name=^mle-template-web-1"') do set containerId=%%i
@@ -78,7 +78,7 @@ options {
 
         stage('Checkout coverage report'){
             steps{
-                dir("mle-template"){
+                dir("lab1"){
                     bat '''
                     docker-compose logs -t --tail 10
                     '''
@@ -88,7 +88,7 @@ options {
 
         stage('Push'){
             steps{
-                bat 'chcp 65001 && docker push altairzero/mle-template:latest'
+                bat 'chcp 65001 && docker push adasirotkina/mle_lab1:latest'
             }
         }
 	}
