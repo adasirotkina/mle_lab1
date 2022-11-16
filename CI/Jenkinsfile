@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDS=credentials('mle_lab1')
+        DOCKERHUB_CREDS=credentials('mle-lab1')
         LC_ALL = "en_US.UTF-8"
         LANG    = "en_US.UTF-8"
         LANGUAGE = "en_US.UTF-8"
@@ -16,16 +16,15 @@ options {
         stage('Clone github repository') {
             steps {
                 cleanWs()
-                bat 'git clone -b main https://github.com/adasirotkina/mle_lab1'
+                bat 'chcp 65001 && git clone -b main https://github.com/adasirotkina/mle_lab1.git'
 				}
 			}
 
         stage('Checkout repo dir') {
             steps {
-                bat 'chcp 65001 && cd mle_lab1 && dir'
+                bat 'chcp 65001 && cd mle-lab1 && dir'
 				}
 			}
-
 
         stage('Login'){
             steps{
@@ -40,13 +39,13 @@ options {
             steps {
                 script {
                     try {
-                        bat 'chcp 65001 && cd mle_lab1 && docker-compose build'
+                        bat 'chcp 65001 && cd mle-lab1 && docker-compose build'
                         }
 
                     finally {
                     bat '''
                         chcp 65001
-                        cd lab1
+                        cd mle-lab1
                         docker-compose up -d
                         '''
                         }
@@ -61,7 +60,7 @@ options {
 
         stage('Checkout container logs') {
             steps {
-                dir("lab1") {
+                dir("mle-lab1") {
                         bat '''
                             docker-compose up -d
                             for /f %%i in ('docker ps -qf "name=^mle-lab1-web-1"') do set containerId=%%i
@@ -79,7 +78,7 @@ options {
 
         stage('Checkout coverage report'){
             steps{
-                dir("mle_lab1"){
+                dir("mle-lab1"){
                     bat '''
                     docker-compose logs -t --tail 10
                     '''
