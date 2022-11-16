@@ -22,7 +22,7 @@ options {
 
         stage('Checkout repo dir') {
             steps {
-                bat 'chcp 65001 && cd mle_lab1 && dir'
+                bat 'chcp 65001 && cd lab1 && dir'
 				}
 			}
 
