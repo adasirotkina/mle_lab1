@@ -22,7 +22,7 @@ options {
 
         stage('Checkout repo dir') {
             steps {
-                bat 'chcp 65001 && cd lab1 && dir'
+                bat 'chcp 65001 && cd mle_lab1 && dir'
 				}
 			}
 
@@ -40,7 +40,7 @@ options {
             steps {
                 script {
                     try {
-                        bat 'chcp 65001 && cd lab1 && docker-compose build'
+                        bat 'chcp 65001 && cd mle_lab1 && docker-compose build'
                         }
 
                     finally {
@@ -79,7 +79,7 @@ options {
 
         stage('Checkout coverage report'){
             steps{
-                dir("lab1"){
+                dir("mle_lab1"){
                     bat '''
                     docker-compose logs -t --tail 10
                     '''
