@@ -21,7 +21,8 @@ class MultiModel():
         self.config = configparser.ConfigParser()
         self.log = logger.get_logger(__name__)
         # self.config.read(os.path.join(os.getcwd(), "config.ini"))
-        self.config.read("C:/Users/ada/Maga/MLE/lab1/src/config.ini")
+        self.config.read("config.ini")
+        # self.config.read("C:/Users/ada/Maga/MLE/lab1/src/config.ini")
         # path = '/'.join((os.path.abspath("config.ini").replace('\\', '/')).split('/')[:-1])
         #
         # self.config.read(os.path.join(path, 'config.ini'))
@@ -80,8 +81,8 @@ class MultiModel():
 
     def save_model(self, reg, path: str, name: str, params: dict) -> bool:
         self.config[name] = params
-        os.remove('C:/Users/ada/Maga/MLE/lab1/src/config.ini')
-        with open('C:/Users/ada/Maga/MLE/lab1/src/config.ini', 'w') as configfile:
+        os.remove('config.ini')
+        with open('config.ini', 'w') as configfile:
             self.config.write(configfile)
         pickle.dump(reg, open(path, 'wb'))
         self.log.info(f'{path} is saved')
