@@ -16,13 +16,19 @@ options {
         stage('Clone github repository') {
             steps {
                 cleanWs()
-                bat 'chcp 65001 && git clone -b main https://github.com/adasirotkina/mle_lab1.git'
+                bat '''
+//                 chcp 65001
+                git clone -b main https://github.com/adasirotkina/mle_lab1.git'
+                '''
 				}
 			}
 
         stage('Checkout repo dir') {
             steps {
-                bat 'chcp 65001 && cd mle_lab1 && dir'
+                bat '''
+//                 chcp 65001 &&
+                cd mle_lab1 && dir'
+                '''
 				}
 			}
 
