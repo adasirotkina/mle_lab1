@@ -46,7 +46,10 @@ options {
                 script {
                     try {
 //                         bat 'chcp 65001 && cd mle-lab1 && docker-compose build'
-                        bat 'cd mle_lab1 && docker-compose build'
+                        bat '''
+                        cd mle_lab1
+                        docker-compose build
+                        '''
                         }
 
 //                     finally {
