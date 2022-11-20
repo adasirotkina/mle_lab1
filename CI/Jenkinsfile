@@ -16,8 +16,11 @@ options {
         stage('Clone github repository') {
             steps {
                 cleanWs()
-                bat '''
+//                 bat '''
 //                 chcp 65001
+//                 git clone -b main https://github.com/adasirotkina/mle_lab1.git'
+//                 '''
+                bat '''
                 git clone -b main https://github.com/adasirotkina/mle_lab1.git'
                 '''
 				}
@@ -25,10 +28,11 @@ options {
 
         stage('Checkout repo dir') {
             steps {
-                bat '''
+//                 bat '''
 //                 chcp 65001 &&
-                cd mle_lab1 && dir'
-                '''
+//                 cd mle_lab1 && dir'
+//                 '''
+                bat 'cd mle_lab1 && dir'
 				}
 			}
 
@@ -50,6 +54,7 @@ options {
                         cd mle_lab1
                         docker-compose build
                         '''
+
                         }
 
 //                     finally {
