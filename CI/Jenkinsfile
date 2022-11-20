@@ -10,7 +10,7 @@ pipeline {
 
 options {
         timestamps()
-        skipDefaultCheckout(true)
+//         skipDefaultCheckout(true)
 	}
     stages {
         stage('Clone github repository') {
