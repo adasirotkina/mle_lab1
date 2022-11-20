@@ -17,7 +17,8 @@ class DataMaker():
         logger = Logger(SHOW_LOG)
         self.config = configparser.ConfigParser()
         self.log = logger.get_logger(__name__)
-        self.project_path = "C:\\Users\\ada\\Maga\\MLE\\lab1\\data"
+        # self.project_path = "C:\\Users\\ada\\Maga\\MLE\\lab1\\data"
+        self.project_path = os.path.join(os.getcwd(), "data")
         self.data_path = os.path.join(self.project_path, "bike.csv")
         self.X_path = os.path.join(self.project_path, "bike_X.csv")
         self.y_path = os.path.join(self.project_path, "bike_y.csv")

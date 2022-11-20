@@ -23,7 +23,7 @@ class Predictor():
         logger = Logger(SHOW_LOG)
         self.config = configparser.ConfigParser()
         self.log = logger.get_logger(__name__)
-        self.config.read("C:/Users/ada/Maga/MLE/lab1/src/config.ini")
+        self.config.read("config.ini")
         self.parser = argparse.ArgumentParser(description="Predictor")
         self.parser.add_argument("-m",
                                  "--model",
