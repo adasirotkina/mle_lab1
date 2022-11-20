@@ -22,6 +22,7 @@ options {
                             bat '''
                 git clone -b main https://github.com/adasirotkina/mle_lab1.git'
                 '''}
+                
             }
 
 //                 bat '''
