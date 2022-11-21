@@ -44,6 +44,7 @@ class DataMaker():
             return False
 
     def split_data(self, test_size=TEST_SIZE) -> bool:
+        self.get_data()
         try:
             X = pd.read_csv(self.X_path, index_col=0)
             y = pd.read_csv(self.y_path, index_col=0)

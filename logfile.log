@@ -1,3 +1,4 @@
-2022-11-20 12:19:02,052 — __main__ — INFO — Predictor is ready
-2022-11-20 12:19:02,131 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\lasso.sav passed func test C:\Users\ada\Maga\MLE\lab1\tests\test_0.json
-2022-11-20 12:19:02,142 — __main__ — INFO — C:\Users\ada\Maga\MLE\lab1\experiments\lasso.sav passed func test C:\Users\ada\Maga\MLE\lab1\tests\test_1.json
+2022-11-21 11:53:29,374 — train — INFO — MultiModel is ready
+2022-11-21 11:53:32,044 — train — INFO — C:\Users\ada\Maga\MLE\mle_lab1\experiments\rand_forest.sav is saved
+1-21 11:53:29,374 — train — INFO — MultiModel is ready
+2022-11-21 11:53:32,044 — train — INFO — C:\Users\ada\Maga\MLE\mle_lab1\experiments\rand_forest.sav is saved

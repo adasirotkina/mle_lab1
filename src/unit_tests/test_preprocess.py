@@ -4,14 +4,16 @@ import unittest
 import pandas as pd
 import sys
 
-# sys.path.insert(1, os.path.join(os.getcwd(), "src"))
-sys.path.insert(1, "C:/Users/ada/Maga/MLE/lab1/src")
+sys.path.insert(1, os.path.join(os.getcwd(), "src"))
+# sys.path.insert(1, "C:/Users/ada/Maga/MLE/lab1/src")
 
 from preprocess import DataMaker
 
 config = configparser.ConfigParser()
-config.read("C:/Users/ada/Maga/MLE/lab1/src/config.ini")
+# config.read("C:/Users/ada/Maga/MLE/lab1/src/config.ini")
+config.read("config.ini")
 
+print(config['DATA'])
 
 class TestDataMaker(unittest.TestCase):
 
