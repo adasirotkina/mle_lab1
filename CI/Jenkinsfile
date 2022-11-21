@@ -79,11 +79,11 @@ options {
 //             }
 //         }
 
-        stage('Push'){
-            steps{
-                bat 'chcp 65001 && docker push adasirotkina/mle_lab1:latest'
-            }
-        }
+//         stage('Push'){
+//             steps{
+//                 bat 'chcp 65001 && docker push adasirotkina/mle_lab1:latest'
+//             }
+//         }
 	}
 
 //     post {
