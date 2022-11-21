@@ -15,14 +15,10 @@ options {
     stages {
         stage('Clone github repository') {
             steps {
-            script {
-            try {cleanWs()}
-
-            finally {
-                            bat '''
+             bat '''
                 git clone -b main https://github.com/adasirotkina/mle_lab1.git'
-                '''}
-                
+                '''
+
             }
 
 //                 bat '''
