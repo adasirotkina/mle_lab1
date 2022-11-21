@@ -15,11 +15,13 @@ options {
     stages {
         stage('Clone github repository') {
             steps {
-             bat '''
+
+
+                            bat '''
                 git clone -b main https://github.com/adasirotkina/mle_lab1.git'
                 '''
 
-            }
+
 
 //                 bat '''
 //                 chcp 65001
