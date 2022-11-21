@@ -15,6 +15,7 @@ options {
     stages {
         stage('Clone github repository') {
             steps {
+            cleanWs()
 
 
                             bat '''
