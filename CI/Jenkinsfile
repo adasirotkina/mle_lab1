@@ -61,7 +61,7 @@ options {
 
         stage('Checkout container logs') {
             steps {
-                dir("mle-template") {
+                dir("mle_lab1") {
                         bat '''
                             docker-compose up -d
                             for /f %%i in ('docker ps -qf "name=^mle_lab1_web_1"') do set containerId=%%i
