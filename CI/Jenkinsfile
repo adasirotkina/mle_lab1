@@ -46,13 +46,13 @@ options {
                 }
             }
 
-        stage("Run unit tests") {
-            steps {
-                dir('mle_lab1') {
-                    bat 'docker '
-                }
-            }
-        }
+//         stage("Run unit tests") {
+//             steps {
+//                 dir('mle_lab1') {
+//                     bat 'docker '
+//                 }
+//             }
+//         }
 
         // use for multi containers:
         //docker exec %containerId% cd app && coverage run src/unit_tests/test_preprocess.py && coverage run -a src/unit_tests/test_training.py && coverage report -m
