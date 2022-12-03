@@ -46,28 +46,36 @@ options {
                 }
             }
 
+        stage("Run unit tests") {
+            steps {
+                dir('mle_lab1') {
+                    bat 'docker '
+                }
+            }
+        }
+
         // use for multi containers:
         //docker exec %containerId% cd app && coverage run src/unit_tests/test_preprocess.py && coverage run -a src/unit_tests/test_training.py && coverage report -m
         //use for single container (with auth):
         //docker run --name mle-template_web_1 cd app && coverage run src/unit_tests/test_preprocess.py && coverage run -a src/unit_tests/test_training.py && coverage report -m
 
-//         stage('Checkout container logs') {
-//             steps {
-//                 dir("mle-template") {
-//                         bat '''
-//                             docker-compose up -d
-//                             for /f %%i in ('docker ps -qf "name=^mle-template-web-1"') do set containerId=%%i
-//                             echo %containerId%
-//                             IF "%containerId%" == "" (
-//                                 echo "No container running"
-//                             )
-//                             ELSE (
-//                                 docker logs --tail 1000 -f %containerId%
-//                                 )
-//                         '''
-//                     }
-//             }
-//         }
+        stage('Checkout container logs') {
+            steps {
+                dir("mle-template") {
+                        bat '''
+                            docker-compose up -d
+                            for /f %%i in ('docker ps -qf "name=^mle-template-web-1"') do set containerId=%%i
+                            echo %containerId%
+                            IF "%containerId%" == "" (
+                                echo "No container running"
+                            )
+                            ELSE (
+                                docker logs --tail 1000 -f %containerId%
+                                )
+                        '''
+                    }
+            }
+        }
 
 //         stage('Checkout coverage report'){
 //             steps{
