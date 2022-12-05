@@ -71,7 +71,6 @@ options {
                             )
                             ELSE (
                                 docker logs --tail 1000 -f %containerId%
-                                docker excec -it %containerId% cd app && coverage run src/
                                 )
                         '''
                     }
