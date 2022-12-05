@@ -71,32 +71,33 @@ options {
                             )
                             ELSE (
                                 docker logs --tail 1000 -f %containerId%
+                                docker excec -it %containerId% cd app && coverage run src/
                                 )
                         '''
                     }
             }
         }
 
-//         stage('Checkout coverage report'){
-//             steps{
-//                 dir("mle-template"){
-//                     bat '''
-//                     docker-compose logs -t --tail 10
-//                     '''
-//                 }
-//             }
-//         }
+        stage('Checkout coverage report'){
+            steps{
+                dir("mle_lab1"){
+                    bat '''
+                    docker-compose logs -t --tail 10
+                    '''
+                }
+            }
+        }
 
-//         stage('Push'){
-//             steps{
-//                 bat 'chcp 65001 && docker push adasirotkina/mle_lab1:latest'
-//             }
-//         }
+        stage('Push'){
+            steps{
+                bat 'docker push adasirotkina/mle_lab1:latest'
+            }
+        }
 	}
 
-//     post {
-//         always {
-//             bat 'chcp 65001 && docker logout'
-//         }
-//     }
+    post {
+        always {
+            bat 'docker logout'
+        }
+    }
 }
