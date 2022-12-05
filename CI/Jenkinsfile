@@ -87,11 +87,6 @@ options {
             }
         }
 
-        stage('Push'){
-            steps{
-                bat 'docker push adasirotkina/mle_lab1:latest'
-            }
-        }
 	}
 
     post {
