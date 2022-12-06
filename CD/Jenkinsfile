@@ -21,6 +21,7 @@ options {
             steps{
                 bat '''
                         docker run --name mle-lab1 -p 80:5556 -d adasirotkina/mle_lab1:latest
+                        echo "Succes run"
                 '''
             }
         }
