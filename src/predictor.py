@@ -20,6 +20,9 @@ SHOW_LOG = True
 class Predictor():
 
     def __init__(self) -> None:
+        """
+            Parsing args
+        """
         logger = Logger(SHOW_LOG)
         self.config = configparser.ConfigParser()
         self.log = logger.get_logger(__name__)
@@ -57,6 +60,10 @@ class Predictor():
         self.log.info("Predictor is ready")
 
     def predict(self) -> bool:
+
+        """
+            Class method for predicting result
+        """
         args = self.parser.parse_args()
         try:
             classifier = pickle.load(

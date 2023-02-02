@@ -16,18 +16,15 @@ SHOW_LOG = True
 
 class MultiModel():
 
+    """
+        Class for training and saving models
+    """
+
     def __init__(self) -> None:
         logger = Logger(SHOW_LOG)
         self.config = configparser.ConfigParser()
         self.log = logger.get_logger(__name__)
-        # self.config.read(os.path.join(os.getcwd(), "config.ini"))
         self.config.read("config.ini")
-        # self.config.read("C:/Users/ada/Maga/MLE/lab1/src/config.ini")
-        # path = '/'.join((os.path.abspath("config.ini").replace('\\', '/')).split('/')[:-1])
-        #
-        # self.config.read(os.path.join(path, 'config.ini'))
-        # print(self.config)
-        # print(os.path.join(os.getcwd(), "config.ini"))
         self.X_train = pd.read_csv(
             self.config["SPLIT_DATA"]["X_train"], index_col=0)
         self.y_train = pd.read_csv(
@@ -46,6 +43,10 @@ class MultiModel():
         self.log.info("MultiModel is ready")
 
     def lasso_reg(self, predict=False) -> bool:
+
+        """
+            Class method for fitting LASSO model
+        """
         reg = Lasso()
         try:
             reg.fit(self.X_train, self.y_train)
@@ -62,6 +63,10 @@ class MultiModel():
     def rand_forest(self, n_trees=100,
                     criterion = "squared_error",
                     predict=False) -> bool:
+
+        """
+            Class method for fitting Random Forest model
+        """
         reg = RandomForestRegressor(
             n_estimators=n_trees,
             # criterion=criterion
@@ -80,6 +85,10 @@ class MultiModel():
         return self.save_model(reg, self.rand_forest_path, "RAND_FOREST", params)
 
     def save_model(self, reg, path: str, name: str, params: dict) -> bool:
+
+        """
+            Class method for saving models
+        """
         self.config[name] = params
         os.remove('config.ini')
         with open('config.ini', 'w') as configfile:
