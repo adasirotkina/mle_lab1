@@ -12,7 +12,9 @@ SHOW_LOG = True
 
 
 class DataMaker():
-
+    """
+         Class to prepare data for training and predicting
+     """
     def __init__(self) -> None:
         logger = Logger(SHOW_LOG)
         self.config = configparser.ConfigParser()
@@ -29,6 +31,17 @@ class DataMaker():
         self.log.info("DataMaker is ready")
 
     def get_data(self) -> bool:
+
+        """
+            Class method to read data from files and sets object variables
+
+            Args:
+                self
+
+            Returns:
+                X and y path
+        """
+
         dataset = pd.read_csv(self.data_path)
         X = pd.DataFrame(dataset.iloc[:, 1:10].values)
         y = pd.DataFrame(dataset.iloc[:, 11:].values)
@@ -44,6 +57,16 @@ class DataMaker():
             return False
 
     def split_data(self, test_size=TEST_SIZE) -> bool:
+
+        """
+            Class method to split data into train and test
+
+            Args:
+                self, test_size - percent of data for test
+
+            Returns:
+                data paths
+        """
         self.get_data()
         try:
             X = pd.read_csv(self.X_path, index_col=0)
@@ -70,6 +93,15 @@ class DataMaker():
             os.path.isfile(self.test_path[1])
 
     def save_splitted_data(self, df: pd.DataFrame, path: str) -> bool:
+        """
+            Class method to save data
+
+            Args:
+                self, data, path
+
+            Returns:
+                path
+        """
         df = df.reset_index(drop=True)
         df.to_csv(path, index=True)
         self.log.info(f'{path} is saved')
